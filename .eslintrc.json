@@ -1,0 +1,78 @@
+{
+	"extends": [
+		"airbnb",
+		"prettier",
+		"prettier/react",
+		"plugin:prettier/recommended",
+		"eslint-config-prettier"
+	],
+	"parser": "babel-eslint",
+	"rules": {
+		"no-console": "off",
+		"import/no-cycle": "off",
+		"no-underscore-dangle": "off",
+		"react/prop-types": [
+			"error",
+			{
+				"ignore": [
+					"reset",
+					"touch",
+					"children",
+					"initialize",
+					"navigation",
+					"change",
+					"handleSubmit",
+					"submitting",
+					"valid",
+					"invalid",
+					"pristine",
+					"meta",
+					"error",
+					"input",
+                    "className"
+				]
+			}
+		],
+		"no-use-before-define": ["error", { "functions": true, "classes": true, "variables": false }],
+		"react/destructuring-assignment": ["warn", "always"],
+		"import/no-extraneous-dependencies": [
+			"error",
+			{ "devDependencies": true, "optionalDependencies": false, "peerDependencies": false }
+		],
+		"import/no-unresolved": "off",
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [".js", ".jsx"]
+			}
+		],
+		"prettier/prettier": [
+			"error",
+			{
+				"trailingComma": "none",
+				"singleQuote": true,
+				"printWidth": 100,
+				"useTabs": false,
+				"tabWidth": 4,
+				"arrowParens": "avoid"
+			}
+		],
+        "jsx-a11y/aria-role": [ 2, {
+          "ignoreNonDOM": false
+        }],
+      "jsx-a11y/no-noninteractive-element-interactions": "off",
+      "jsx-a11y/no-static-element-interactions": "off",
+      "react/jsx-props-no-spreading": "off"
+    },
+	"plugins": ["prettier"],
+	"globals": {
+		"__CLIENT__": true,
+		"__SERVER__": true,
+		"__DEV__": true
+	},
+    "env": {
+      "browser": true,
+      "node": true,
+      "jasmine": true
+    }
+}
